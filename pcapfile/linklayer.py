@@ -9,6 +9,7 @@ import sys
 
 import pcapfile.protocols.linklayer.ethernet as ethernet
 import pcapfile.protocols.linklayer.wifi as wifi
+import pcapfile.protocols.linklayer.sll as sll
 
 
 __LL_TYPES__ = [('LINKTYPE_NULL', 0, 'null', None),
@@ -16,7 +17,8 @@ __LL_TYPES__ = [('LINKTYPE_NULL', 0, 'null', None),
                 ('LINKTYPE_IEEE802_11_RADIOTAP', 127, wifi.Wifi),
                 ('LINKTYPE_TOKEN_RING', 6, 'token ring', None),
                 ('LINKTYPE_ARCNET', 7, 'ARCnet', None),
-                ('LINKTYPE_SLIP', 8, 'SLIP', None)]
+                ('LINKTYPE_SLIP', 8, 'SLIP', None),
+                ('LINKTYPE_LINUX_SLL', 113, 'SLL', sll.Sll)]
 
 
 def __get_ll_type__(ll_type):
