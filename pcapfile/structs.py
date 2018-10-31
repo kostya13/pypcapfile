@@ -41,9 +41,9 @@ class pcap_packet(ctypes.Structure):
                  packet_len, packet):
         super(pcap_packet, self).__init__()
         self.header = header
-        self.timestamp_s = timestamp
+        self.timestamp = timestamp
         self.timestamp_us = timestamp_us
-        self.timestamp = self.timestamp_s * 1000000 + self.timestamp_us
+        self.timestamp_long = self.timestamp * 1000000 + self.timestamp_us
         self.capture_len = capture_len
         self.packet_len = packet_len
         self.packet = packet
